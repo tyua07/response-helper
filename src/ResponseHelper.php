@@ -165,15 +165,16 @@ class ResponseHelper
     }
 
     /**
-     * 增加爪币成功响应
+     * 增加积分成功响应
      *
-     * @param string $message 提示文字
-     * @param array $data 响应的数据
+     * @param string    $message    提示文字
+     * @param array     $data       响应的数据
+     * @param int       $score      需要增加的积分数量
      * @return \Illuminate\Http\Response
      */
-    public static function scoreSuccessResponse($message = '', array $data = [])
+    public static function scoreSuccessResponse($message = '', array $data = [], $score = 0)
     {
-        return (new self(CodeHelp::ADD_GOLD_SUCCESS, $message, $data))->json();
+        return (new self(CodeHelp::ADD_GOLD_SUCCESS, $message, $data, $score))->json();
     }
 
     /**
